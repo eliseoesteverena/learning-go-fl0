@@ -35,7 +35,7 @@ func main() {
 	//Mux
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", Index)
-
+	fmt.Printf("Eliseo")
 	//Server
 	server := &http.Server{
 		Addr:    ":1995",
