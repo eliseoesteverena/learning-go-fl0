@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
+
 	//"log"
 	"net/http"
 )
@@ -17,6 +19,7 @@ func Index(rw http.ResponseWriter, r *http.Request) {
 	template, err := template.ParseFiles("index.html")
 
 	usuario := Usuario{"Eliseo", 28}
+	fmt.Printf("Eliseo")
 
 	if err != nil {
 		panic(err)
