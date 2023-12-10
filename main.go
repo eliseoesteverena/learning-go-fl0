@@ -1,45 +1,17 @@
 package main
 
 import (
-	"fmt"
-	"html/template"
 	"log"
-
-	//"log"
 	"net/http"
 )
 
-//Estructuras
-type Usuario struct {
-	UserName string
-	Edad     int
-}
-
-//Handlers
-func Index(rw http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("index.html")
-
-	usuario := Usuario{"Eliseo", 28}
-	fmt.Printf("Eliseo")
-
-	if err != nil {
-		panic(err)
-	} else {
-		template.Execute(rw, usuario)
-	}
-}
-
-//Función principal
 func main() {
-
-	//Mux
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", Index)
-	fmt.Printf("Eliseo")
-	//Server
-	server := &http.Server{
-		Addr:    ":1995",
-		Handler: mux,
-	}
-	log.Fatal(server.ListenAndServe())
+	index()
+}
+func index() {
+	directorio := "./static"
+	http.Handle("/", http.FileServer(http.Dir(directorio)))
+	direccion := ":1995"
+	log.Println("Server: " + direccion)
+	log.Fatal(http.ListenAndServe(direccion, nil))
 }
