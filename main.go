@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"log"
 
 	//"log"
 	"net/http"
@@ -36,9 +37,9 @@ func main() {
 	mux.HandleFunc("/", Index)
 
 	//Server
-	/*server := &http.Server{
-		Addr:    "localhost:1995",
+	server := &http.Server{
+		Addr:    ":1995",
 		Handler: mux,
 	}
-	log.Fatal(server.ListenAndServe())*/
+	log.Fatal(server.ListenAndServe())
 }
