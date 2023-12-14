@@ -11,7 +11,7 @@ func main() {
 func index() {
 	directorio := "./static"
 	http.Handle("/", http.FileServer(http.Dir(directorio)))
-	http.HandleFunc("/", sentInfo)
+	http.HandleFunc("/info", sentInfo)
 	direccion := ":1995"
 	log.Println("Server: " + direccion)
 	log.Fatal(http.ListenAndServe(direccion, nil))
