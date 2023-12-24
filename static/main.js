@@ -1,15 +1,45 @@
     document.addEventListener("DOMContentLoaded", () => {
-        const $inputName = document.querySelector("#nombre_rt"),
-            $inputDire = document.querySelector("#domicilio_rt"),
-            $btnEnviar = document.querySelector("#preview_btn");
+        const $btnEnviar = document.querySelector("#preview_btn"),
+            $inputNameRt = document.querySelector("#name_rt"),
+            $inputAdressRt = document.querySelector("#addres_rt"),
+            $inputCpRt = document.querySelector("#cp_rt"),
+            $inputCityRt = document.querySelector("#city_rt"),
+            $inputStateRt = document.querySelector("#state_rt"),
+            $inputNameDt = document.querySelector("#name_dt"),
+            $inputAdressDt = document.querySelector("#adress_dt"),
+            $inputCpDt = document.querySelector("#cp_dt"),
+            $inputCityDt = document.querySelector("#city_dt"),
+            $inputStateDt = document.querySelector("#state_dt");
 
         $btnEnviar.onclick = async () => {
-            const nombre = $inputName.value;
-            const direccion = $inputDire.value;
+            const nameRt = $inputNameRt.value;
+            const adressRt = $inputAdressRt.value;
+            const cpRt = $inputCpRt.value;
+            const cityRt = $inputCityRt.value;
+            const stateRt = $inputStateRt.value;
+            const nameDt = $inputNameDt.value;
+            const adressDt = $inputAdressDt.value;
+            const cpDt = $inputCpDt.value;
+            const cityDt = $inputCityDt.value;
+            const stateDt = $inputStateDt.value;
+            
             var datos = {
-                nombre: nombre,
-                direccion: direccion
+                remitente: {
+                    name: nameRt,
+                    adress: adressRt,
+                    cp: cpRt,
+                    city:  cityRt,
+                    state: stateRt
+                },
+                destinatario: {
+                    name: nameDt,
+                    adress: adressDt,
+                    cp: cpDt,
+                    city:  cityDt,
+                    state: stateDt
+                }
             }
+            
             const URL_SERVIDOR = "./static"; // Servidor de Go
             const datosJson =  JSON.stringify(datos);
             console.log(datos);

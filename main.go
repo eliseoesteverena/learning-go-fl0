@@ -10,9 +10,16 @@ import (
 	"net/http" // El paquete HTTP
 )
 
-type Datos struct {
-	Nombre    string `json:"nombre"`
-	Direccion string `json:"direccion"`
+type Data struct {
+	Name   string `json:"name"`
+	Adress string `json:"adress"`
+	Cp     string `json:"cp"`
+	City   string `json:"city"`
+	State  string `json:"state"`
+}
+type GroupData struct {
+	Remitente    Data //`json:"nombre"`
+	Destinatario Data //`json:"direccion"`
 }
 
 func main() {
@@ -32,7 +39,7 @@ func index() {
 		}
 
 		// Decodificar el cuerpo JSON recibido en la estructura definida
-		var datosRecibidos Datos
+		var datosRecibidos GroupData
 		err := json.NewDecoder(r.Body).Decode(&datosRecibidos)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadRequest)
@@ -44,12 +51,12 @@ func index() {
 			log.Fatal(err)
 		}
 		// Decodificar JSON en una estructura
-		datoStruct := Datos{}
+		datoStruct := GroupData{}
 		error := json.Unmarshal([]byte(datosJson), &datoStruct)
 		if error != nil {
 			log.Fatal(error)
 		}
-		fmt.Printf("%+v\n", datoStruct.Direccion)
+		fmt.Printf("%+v\n", datoStruct.Remitente.Adress)
 
 		io.WriteString(w, string(datosJson))
 	})
