@@ -1,3 +1,4 @@
+/*
 package main
 
 import (
@@ -11,3 +12,4 @@ func main() {
 	date := now.Second() + now.Minute() + now.Hour() + now.Day() + int(now.Month()) + now.YearDay()
 	fmt.Println("Now:", date)
 }
+*/
