@@ -8,9 +8,7 @@ import (
 	"github.com/jung-kurt/gofpdf"
 )
 
-func main() {
-	generate()
-}
+
 func generate() {
 	pdf := gofpdf.New("P", "mm", "Legal", "") //<- config por default
 
