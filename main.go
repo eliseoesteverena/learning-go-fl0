@@ -18,8 +18,8 @@ type Data struct {
 	State  string `json:"state"`
 }
 type GroupData struct {
-	Remitente    Data //`json:"remitente"`
-	Destinatario Data //`json:"destinatario"`
+	Remitente    Data `json:"remitente"`
+	Destinatario Data `json:"destinatario"`
 }
 
 func main() {
@@ -28,11 +28,6 @@ func main() {
 func index() {
 	http.HandleFunc("/static", func(w http.ResponseWriter, r *http.Request) {
 
-		/*
-			if r.Method != http.MethodPost {
-				io.WriteString(w, "Solo se permiten peticiones POST")
-				return
-		*/
 		if r.Method != http.MethodPost {
 			http.Error(w, "Se espera un método POST", http.StatusMethodNotAllowed)
 			return
