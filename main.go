@@ -18,8 +18,8 @@ type Data struct {
 	State  string `json:"state"`
 }
 type GroupData struct {
-	Remitente    Data //`json:"nombre"`
-	Destinatario Data //`json:"direccion"`
+	Remitente    Data //`json:"remitente"`
+	Destinatario Data //`json:"destinatario"`
 }
 
 func main() {
