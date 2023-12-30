@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
             
-            const URL_SERVIDOR = "./static"; // Servidor de Go
+            const URL_SERVIDOR = "../static"; // Servidor de Go
             const datosJson =  JSON.stringify(datos);
             console.log(datos);
             try {
