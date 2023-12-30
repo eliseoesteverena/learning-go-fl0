@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             $inputCityDt = document.querySelector("#city_dt"),
             $inputStateDt = document.querySelector("#state_dt");
 
+    
         $btnEnviar.onclick = async () => {
             const nameRt = $inputNameRt.value;
             const addressRt = $inputAddressRt.value;
