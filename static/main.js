@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
         const $btnEnviar = document.querySelector("#preview_btn"),
             $inputNameRt = document.querySelector("#name_rt"),
-            $inputAdressRt = document.querySelector("#addres_rt"),
+            $inputAddressRt = document.querySelector("#address_rt"),
             $inputCpRt = document.querySelector("#cp_rt"),
             $inputCityRt = document.querySelector("#city_rt"),
             $inputStateRt = document.querySelector("#state_rt"),
             $inputNameDt = document.querySelector("#name_dt"),
-            $inputAdressDt = document.querySelector("#adress_dt"),
+            $inputAddressDt = document.querySelector("#address_dt"),
             $inputCpDt = document.querySelector("#cp_dt"),
             $inputCityDt = document.querySelector("#city_dt"),
             $inputStateDt = document.querySelector("#state_dt");
 
         $btnEnviar.onclick = async () => {
             const nameRt = $inputNameRt.value;
-            const adressRt = $inputAdressRt.value;
+            const addressRt = $inputAddressRt.value;
             const cpRt = $inputCpRt.value;
             const cityRt = $inputCityRt.value;
             const stateRt = $inputStateRt.value;
             const nameDt = $inputNameDt.value;
-            const adressDt = $inputAdressDt.value;
+            const addressDt = $inputAddressDt.value;
             const cpDt = $inputCpDt.value;
             const cityDt = $inputCityDt.value;
             const stateDt = $inputStateDt.value;
@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
             var datos = {
                 remitente: {
                     name: nameRt,
-                    adress: adressRt,
+                    adress: addressRt,
                     cp: cpRt,
                     city:  cityRt,
                     state: stateRt
                 },
                 destinatario: {
                     name: nameDt,
-                    adress: adressDt,
+                    adress: addressDt,
                     cp: cpDt,
                     city:  cityDt,
                     state: stateDt

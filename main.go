@@ -11,11 +11,11 @@ import (
 )
 
 type Data struct {
-	Name   string `json:"name"`
-	Adress string `json:"adress"`
-	Cp     string `json:"cp"`
-	City   string `json:"city"`
-	State  string `json:"state"`
+	Name    string `json:"name"`
+	Address string `json:"address"`
+	Cp      string `json:"cp"`
+	City    string `json:"city"`
+	State   string `json:"state"`
 }
 type GroupData struct {
 	Remitente    Data `json:"remitente"`
@@ -51,9 +51,16 @@ func index() {
 		if error != nil {
 			log.Fatal(error)
 		}
-		fmt.Printf("%+v\n", datoStruct.Remitente.Adress)
+		fmt.Printf("%+v\n", datoStruct.Remitente.Address)
 
-		io.WriteString(w, string(datosJson))
+		io.WriteString(w, string(datoStruct.Remitente.Address))
+
+		respuestaJson, err := json.Marshal(datoStruct)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		_, _ = w.Write(respuestaJson)
 	})
 
 	directorio := "./static"
