@@ -1,4 +1,16 @@
-    document.addEventListener("DOMContentLoaded", () => {
+const $sig_1 = document.querySelector("#sig_1"),
+        $sig_2 = document.querySelector("#sig_2");
+
+   $sig_1.addEventListener("click", () => {
+    document.getElementById("step_1").style.display = "none";
+    document.getElementById("step_2").style.display = "block";
+   });
+   $sig_2.addEventListener("click", () => {
+    document.getElementById("step_2").style.display = "none";
+    document.getElementById("step_3").style.display = "block";
+   });
+
+   document.addEventListener("DOMContentLoaded", () => {
         const $btnEnviar = document.querySelector("#preview_btn"),
             $inputNameRt = document.querySelector("#name_rt"),
             $inputAdressRt = document.querySelector("#addres_rt"),
