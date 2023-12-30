@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
             
-            const URL_SERVIDOR = "../static"; // Servidor de Go
+            const URL_SERVIDOR = "./static"; // Servidor de Go
             const datosJson =  JSON.stringify(datos);
             console.log(datos);
             try {
@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     method: "POST",
                     body: datosJson,
                 });
+                console.log(response);
                 const respuesta = await response.text();
                 console.log("El servidor dijo: " + respuesta)
             } catch (e) {
