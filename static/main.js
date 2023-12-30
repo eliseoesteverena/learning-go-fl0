@@ -50,11 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     body: datosJson,
                 });
                 console.log(response);
-                const respuesta = await response.text();
+                //const respuesta = await response.text();
+                const respuesta = await JSON.stringify(Response);
                 console.log("El servidor dijo: " + respuesta)
             } catch (e) {
                 console.log("Error en el servidor: " + e.message);
-            }
+            } 
         };
 
     });
