@@ -51,16 +51,16 @@ func index() {
 		if error != nil {
 			log.Fatal(error)
 		}
-		fmt.Printf("%+v\n", datoStruct.Remitente.Address)
+		fmt.Printf("%+v\n", datoStruct.Remitente.Name)
+		io.WriteString(w, string("Exito"))
+		/*
 
-		io.WriteString(w, string(datoStruct.Remitente.Address))
+			respuestaJson, err := json.Marshal(datoStruct)
+			if err != nil {
+				log.Fatal(err)
+			}
 
-		respuestaJson, err := json.Marshal(datoStruct)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		_, _ = w.Write(respuestaJson)
+			io.WriteString(w, string(respuestaJson))*/
 	})
 
 	directorio := "./static"
